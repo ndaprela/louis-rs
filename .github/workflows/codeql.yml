@@ -25,9 +25,8 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: rust
-        build-mode: manual
         queries: security-extended # more thorough but noisier than security-and-quality
-        paths: src
+        source-root: src
 
     - name: Build
       run: cargo build --verbose
