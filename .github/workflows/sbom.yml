@@ -13,10 +13,10 @@ jobs:
       - name: Generate SBOM  
         run: |  
           cargo install cargo-cyclonedx  
-          cargo cyclonedx --format json --override-filename sbom
+          cargo cyclonedx --format json --override-filename bom
           ls -la
       - name: Upload SBOM  
         uses: actions/upload-artifact@v4
         with:  
-          name: sbom  
-          path: sbom.json
+          name: bom  
+          path: bom.json
