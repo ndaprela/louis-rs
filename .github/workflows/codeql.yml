@@ -1,0 +1,25 @@
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: rust
+        build-mode: manual
+        queries: security-extended # more thorough but noisier than security-and-quality
+        paths: src
+
+    - name: Build
+      run: cargo build --verbose
+      
+    - name: Analyze
+      uses: github/codeql-action/analyze@v3
