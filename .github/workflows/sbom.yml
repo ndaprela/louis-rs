@@ -1,4 +1,4 @@
-name: SBOM and Security  
+name: SBOM  
 on:
   push:
     branches: [ "main" ]
@@ -13,7 +13,7 @@ jobs:
       - name: Generate SBOM  
         run: |  
           cargo install cargo-cyclonedx  
-          cargo cyclonedx --format json --output sbom.json  
+          cargo cyclonedx --format json 
       - name: Upload SBOM  
         uses: actions/upload-artifact@v4
         with:  
