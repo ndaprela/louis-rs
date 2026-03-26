@@ -14,7 +14,6 @@ jobs:
         run: |  
           cargo install cargo-cyclonedx  
           cargo cyclonedx --format json --override-filename bom
-          ls -la
       - name: Upload SBOM  
         uses: actions/upload-artifact@v4
         with:  
