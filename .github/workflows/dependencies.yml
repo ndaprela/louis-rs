@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest  
     steps:  
       - uses: actions/checkout@v4  
-      #- name: Audit dependencies  # already covered by cargo deny
-      #  run: cargo audit  # already covered by cargo deny
       - name: Deny check  
         run: |  
           cargo install cargo-deny  
