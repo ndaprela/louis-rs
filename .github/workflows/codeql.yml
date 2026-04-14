@@ -25,7 +25,7 @@ jobs:
       uses: github/codeql-action/init@v4
       with:
         languages: rust
-        queries: security-extended # more thorough but noisier than security-and-quality
+        queries: security-extended
         source-root: src
 
     - name: Build
